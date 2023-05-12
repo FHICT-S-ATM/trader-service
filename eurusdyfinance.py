@@ -1,9 +1,9 @@
-import os
-import sys
+from datetime import datetime
 import backtrader as bt
 import backtrader.feeds as btfeeds
+import os
+import sys
 import yfinance as yf
-from datetime import datetime
 
 class MAstrategy(bt.Strategy):
 	# when initializing the instance, create a 100-day MA indicator using the closing price
@@ -47,7 +47,7 @@ class MAstrategy(bt.Strategy):
 			self.log("Order was canceled/margin/rejected")
 		self.order = None
 
-def execute(fromdate, todate):
+def execute(fromDate, toDate):
 	# if __name__ == '__main__':
 
 	# Create a cerebro instance, add our strategy, some starting cash at broker and a 0.1% broker commission
@@ -56,14 +56,9 @@ def execute(fromdate, todate):
 	cerebro.broker.setcash(10000)
 	cerebro.broker.setcommission(commission=0.001)
 
-	data = bt.feeds.PandasData(dataname=yf.download("EURUSD=X"), fromdate=fromdate, todate=todate)
+	data = bt.feeds.PandasData(dataname=yf.download("EURUSD=X"), fromdate=fromDate, todate=toDate)
 	
 	cerebro.adddata(data)
-	
-
-	# For creating the plot
-	# fromDate = datetime(1000, 1, 1, 00, 00, 00)
-	# toDate = datetime(3000, 1, 1, 23, 59, 59)
 
 	# cerebro.plot(
 	# 	start=fromDate,
