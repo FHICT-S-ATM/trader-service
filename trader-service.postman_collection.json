@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "e2150eb6-da25-4ca3-8a8c-f35e5cee82e0",
+		"name": "trader-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6764419"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/healthpoint",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/healthpoint",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"healthpoint"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"fromDate\": \"2006-1-1\",\n\t\"toDate\": \"2007-1-1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/submit",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"submit"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
