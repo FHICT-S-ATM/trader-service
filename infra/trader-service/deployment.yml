@@ -14,7 +14,7 @@ spec:
         app: trader-service
     spec:
       containers:
-      - name: hello
-        image: nginxdemos/trader-service
+      - name: trader-container
+        image: siem228/trader-service
         ports:
-        - containerPort: 8080
+        - containerPort: 5000
