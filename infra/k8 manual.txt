@@ -1,0 +1,84 @@
+
+Configure your aws IAM account create user and assign Administrator rights
+
+https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html
+
+Create access key IAM user and download excel file with credentials
+
+https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html
+
+
+------------------------------------------------------------------------------------
+
+Install:
+
+Terraform
+
+https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
+
+AWS CLI (Go with v2)
+
+https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+
+Configure AWS CLI with previously created access key
+
+
+run command "aws configure"
+
+AWS Access Key ID [None]: "Your key ID"
+AWS Secret Access Key [None]: "Your secret access key"
+Default region name [None]: eu-central-1
+Default output format [None]:
+
+Kubectl
+
+https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
+
+--------------------------------------------------------------------------------------
+
+In script folder run 
+
+1. terraform init
+
+2. terraform plan
+
+3. terraform apply
+
+4. In prompt enter "yes"
+
+To execute infrastructure it will take ~ 10-15min
+
+----------------------------------------------------------------------------------------
+
+After creation connect to kubectl:
+
+run command "aws eks update-kubeconfig --name eks_cluster_dev --region eu-central-1"
+
+Check if node is up:
+
+run command "kubectl get nodes"
+
+Then run deployment.yml file:
+
+run command "kubectl apply -f deployment.yml"
+
+Check if pods are running:
+
+run command "kubectl get pods"
+
+And run service file:
+
+run command "kubectl apply -f svc.yml"
+
+To see if loadbalancer is created:
+
+run command "kubectl get svc"
+
+external IP should look similar to this - aad07a67a19a642cb9fa914b7fe14d4f-1106952769.eu-central-1.elb.amazonaws.com
+
+If you copy this IP in browser it should display your application.
+
+----------------------------------------------------------------------------------------
+
+To delete infrastructure run command "terraform destroy" in script folder and in prompt enter "yes"
+
