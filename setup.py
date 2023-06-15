@@ -9,6 +9,7 @@ setup(
     install_requires=[
         'Flask==2.3',
 		'backtrader==1.9.78.123'
+		# 'NumPy==1.24.3'
         # Add other dependencies here
     ],
     classifiers=[
@@ -20,5 +21,6 @@ setup(
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.11',
     ],
 )
